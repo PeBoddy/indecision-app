@@ -1,0 +1,38 @@
+.big-button {
+    background: $mid-orange;
+    border: none;
+    border-bottom: 0.5rem solid darken($mid-orange, 20%);
+    width: 100%;
+    padding: 2.4rem 0;
+    color: white;
+    font-weight: bold;
+    font-size: $size-m;
+    margin: 0 0 $size-m 0;
+}
+
+.big-button:disabled {
+    opacity: .4;
+}
+
+.button {
+    background: $mid-orange;
+    border: none;
+    border-bottom: 0.3rem solid darken($mid-orange, 20%);
+    color: white;
+    font-weight: 500;
+    padding: $size-xs;
+}
+
+// modifiere
+.button--link {
+    background: none;
+    border: none;
+    color: $light-grey;
+    padding: 0;
+}
+
+@media (min-width: $desktop-breakpoint) {
+    .big-button {
+        margin: 0 0 $size-l 0;
+    }
+}

@@ -1,0 +1,31 @@
+// Header
+.list {
+    background: lighten($mid-grey, 5%);
+    margin: 0 0 $size-m 0;
+}
+
+.list-message {
+    text-align: center;
+    color: $light-grey;
+    padding: $size-m 0;
+    margin: 0;
+    border-bottom: .1rem solid $mid-orange;
+}
+
+.list-header {
+    background: $dark-grey;
+    color: $light-grey;
+    display: flex;
+    direction: row;
+    padding: 0 $size-s;
+    justify-content: space-between;
+}
+
+@media (min-width: $desktop-breakpoint) {
+    .list {
+        margin: 0 0 $size-l 0;
+    }
+    .list-message {
+        padding: $size-l 0;
+    }
+}

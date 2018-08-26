@@ -1,0 +1,25 @@
+.header {
+    background: $dark-grey;
+    margin: 0 0 $size-m 0;
+    padding: $size-s 0;
+}
+
+// BEM (Naming Convention) = block element modifier
+.header__title {
+    color: white;
+    font-size: $size-m;
+    margin: 0;
+}
+
+.header__subtitle {
+    color: $light-grey;
+    font-size: $size-s;
+    font-weight: 500;
+    margin: 0;
+}
+
+@media (min-width: $desktop-breakpoint) {
+    .header {
+        margin: 0 0 $size-l 0;
+    }
+}
