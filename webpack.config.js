@@ -1,9 +1,9 @@
 const path = require('path');
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CssExtractPlugin = require('extract-text-webpack-plugin');
 
 module.exports = (env) => {
     const isProd = env === 'production';
-    // const CSSExtract = new ExtractTextPlugin('styles.scss');
+    const CSSExtract = new CssExtractPlugin('styles.css');
 
     console.log('env', env);
     return {
@@ -19,18 +19,28 @@ module.exports = (env) => {
                 exclude: /node_modules/
             }, {
                 test: /\.s?css$/,
-                // use: CSSExtract.extract({
+                use: CSSExtract.extract({
                     use: [
-                        'css-loader',
-                        'sass-loader'
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                sourceMap: true
+                            }
+                        },
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                sourceMap: true
+                            }
+                        },
                     ]
-                // })
+                })
             }]
         },
-        // plugins: [
-        //     CSSExtract
-        // ],
-        devtool: isProd ? 'source-map' : 'cheap-module-eval-source-map',
+        plugins: [
+            CSSExtract
+        ],
+        devtool: isProd ? 'source-map' : 'inline-source-map', //'cheap-module-eval-source-map',
         devServer: {
             contentBase: path.join(__dirname, 'public')
         }
