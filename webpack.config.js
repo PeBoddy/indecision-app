@@ -42,7 +42,8 @@ module.exports = (env) => {
         ],
         devtool: isProd ? 'source-map' : 'inline-source-map', //'cheap-module-eval-source-map',
         devServer: {
-            contentBase: path.join(__dirname, 'public')
+            contentBase: path.join(__dirname, 'public'),
+            historyApiFallback: true // serve up the index page when 404
         }
     }
 };
